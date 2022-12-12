@@ -23,7 +23,7 @@ const configureCaptcha = () => {
 
 const onSignInSubmit = (e) => {
   alert('hello');
-  configureCaptcha();
+  //configureCaptcha();
   //const phoneNumber = "+91" + state.mobile;
   //var auth = getAuth(app);
   //var phoneNumber = '+918971044793';
