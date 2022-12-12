@@ -7,6 +7,7 @@ import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 //const auth = getAuth(app);
 
 const onSignInSubmit = (e) => {
+  alert("hello");
   // configureCaptcha();
   // //const phoneNumber = "+91" + state.mobile;
   // const phoneNumber = '+918971044793';
