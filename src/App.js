@@ -7,18 +7,19 @@ import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 //const auth = getAuth(app);
 
 const configureCaptcha = () => {
-  // auth.languageCode = 'in';
-  // window.recaptchaVerifier = new RecaptchaVerifier(
-  //   'sign-in-button',
-  //   {
-  //     size: 'invisible',
-  //     callback: (response) => {
-  //       // reCAPTCHA solved, allow signInWithPhoneNumber.
-  //       onSignInSubmit();
-  //     },
-  //   },
-  //   auth
-  // );
+  const auth = getAuth(app);
+  auth.languageCode = 'in';
+  window.recaptchaVerifier = new RecaptchaVerifier(
+    'sign-in-button',
+    {
+      size: 'invisible',
+      callback: (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        onSignInSubmit();
+      },
+    },
+    auth
+  );
 };
 
 const onSignInSubmit = (e) => {
