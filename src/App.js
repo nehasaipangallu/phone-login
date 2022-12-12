@@ -24,8 +24,8 @@ const configureCaptcha = () => {
 const onSignInSubmit = (e) => {
   alert('hello');
   //configureCaptcha();
-  //const phoneNumber = "+91" + state.mobile;
-  //var auth = getAuth(app);
+  const phoneNumber = "+91" + state.mobile;
+  const auth = getAuth(app);
   //var phoneNumber = '+918971044793';
   console.log('561');
   //var appVerifier = window.recaptchaVerifier;
