@@ -8,15 +8,15 @@ import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 
 const configureCaptcha = () => {
   //const auth = getAuth(app);
-  auth.languageCode = 'in';
+  auth.languageCode = "in";
   window.recaptchaVerifier = new RecaptchaVerifier(
-    'sign-in-button',
+    "sign-in-button",
     {
-      size: 'invisible',
+      size: "invisible",
       callback: (response) => {
         // reCAPTCHA solved, allow signInWithPhoneNumber.
         onSignInSubmit();
-      },
+      }
     },
     auth
   );
