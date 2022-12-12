@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
-//import { app } from './firebase';
-//import { getAuth } from 'firebase/auth';
-//import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
+import { app } from './firebase';
+import { getAuth } from 'firebase/auth';
+import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 
 export default function App() {
   //const auth = getAuth(app);
