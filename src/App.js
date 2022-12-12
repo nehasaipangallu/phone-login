@@ -12,7 +12,7 @@ const auth = getAuth(app);
 //   // });
 //   return;
 // }
-function configureCaptcha() {
+const configureCaptcha = function () {
   auth.languageCode = 'in';
   window.recaptchaVerifier = new RecaptchaVerifier(
     'sign-in-button',
@@ -25,9 +25,9 @@ function configureCaptcha() {
     },
     auth
   );
-}
+};
 
-function onSignInSubmit(e) {
+const onSignInSubmit = function (e) {
   e.preventDefault();
   configureCaptcha();
   //const phoneNumber = "+91" + state.mobile;
@@ -48,8 +48,8 @@ function onSignInSubmit(e) {
       // ...
       console.log('SMS not sent');
     });
-}
-function onSubmitOTP(e) {
+};
+const onSubmitOTP = function (e) {
   e.preventDefault();
   //const code = this.state.otp;
   const code = '123456';
@@ -64,7 +64,7 @@ function onSubmitOTP(e) {
     .catch((error) => {
       // User couldn"t sign in (bad verification code?)
     });
-}
+};
 
 export default function App() {
   return (
