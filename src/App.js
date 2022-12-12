@@ -70,8 +70,7 @@ function App() {
       {
         size: "invisible",
         callback: (response) => {
-          // reCAPTCHA solved, allow signInWithPhoneNumber.
-          onSignInSubmit();
+          onSignInSubmit()
         }
       },
       getAuth(app)
