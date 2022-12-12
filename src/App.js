@@ -58,7 +58,7 @@ const onSubmitOTP = (e) => {
   //   });
 };
 
-export default function App() {
+function App() {
   return (
     <div>
       <div>
@@ -78,3 +78,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
