@@ -28,7 +28,7 @@ const onSignInSubmit = (e) => {
   const auth = getAuth(app);
   //var phoneNumber = '+918971044793';
   console.log('561');
-  const appVerifier = new RecaptchaVerifier(
+  const appVerifier =  RecaptchaVerifier(
     'sign-in-button',
     {
       size: 'invisible',
