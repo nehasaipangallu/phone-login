@@ -25,10 +25,10 @@ const onSignInSubmit = (e) => {
   alert('hello');
   configureCaptcha();
   //const phoneNumber = "+91" + state.mobile;
-  const auth = getAuth(app);
-  const phoneNumber = "+918971044793";
+  var auth = getAuth(app);
+  var phoneNumber = "+918971044793";
   //console.log(phoneNumber);
-  const appVerifier = window.recaptchaVerifier;
+  var appVerifier = window.recaptchaVerifier;
   // signInWithPhoneNumber(auth, phoneNumber, appVerifier)
   //   .then((confirmationResult) => {
   //     // SMS sent. Prompt user to type the code from the message, then sign the
