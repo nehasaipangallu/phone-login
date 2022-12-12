@@ -62,19 +62,7 @@ function App() {
   return (
     <div>
       <h2>Login Form</h2>
-      <form onSubmit={(e) => {
-    //const auth = getAuth(app);
-    getAuth(app).languageCode = "in";
-    window.recaptchaVerifier = new RecaptchaVerifier(
-      "sign-in-button",
-      {
-        size: "invisible",
-        callback: (response) => {
-          onSignInSubmit()
-        }
-      },
-      getAuth(app)
-    )}}>
+      <form onSubmit={onSignInSubmit}>
         <div id="sign-in-button"></div>
         <input type="number" name="mobile" placeholder="Mobile number" />
         <button type="submit">Send OTP</button>
