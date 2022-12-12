@@ -1,5 +1,4 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAu5znO8wlIzjpfQ10XjKzLxcx7I_evIwY',
@@ -7,8 +6,7 @@ const firebaseConfig = {
   projectId: 'phone-login-test-4769a',
   storageBucket: 'phone-login-test-4769a.appspot.com',
   messagingSenderId: '62106832589',
-  appId: '1:62106832589:web:c2d0decc9d1c6b1891a384',
+  appId: '1:62106832589:web:c2d0decc9d1c6b1891a384'
 };
 
-// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
