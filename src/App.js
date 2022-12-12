@@ -5,28 +5,28 @@ import { getAuth } from 'firebase/auth';
 import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 
 export default function App() {
-  //const auth = getAuth(app);
-  // function handleChange(e) {
-  //   //const { name, value } = e.target;
-  //   // this.setState({
-  //   //   [name]: value,
-  //   // });
-  //   return;
-  // }
-  // function configureCaptcha() {
-  //   auth.languageCode = 'in';
-  //   window.recaptchaVerifier = new RecaptchaVerifier(
-  //     'sign-in-button',
-  //     {
-  //       size: 'invisible',
-  //       callback: (response) => {
-  //         // reCAPTCHA solved, allow signInWithPhoneNumber.
-  //         onSignInSubmit();
-  //       },
-  //     },
-  //     auth
-  //   );
-  // }
+  const auth = getAuth(app);
+  function handleChange(e) {
+    //const { name, value } = e.target;
+    // this.setState({
+    //   [name]: value,
+    // });
+    return;
+  }
+  function configureCaptcha() {
+    auth.languageCode = 'in';
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      'sign-in-button',
+      {
+        size: 'invisible',
+        callback: (response) => {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+          onSignInSubmit();
+        },
+      },
+      auth
+    );
+  }
 
   // function onSignInSubmit(e) {
   //   e.preventDefault();
