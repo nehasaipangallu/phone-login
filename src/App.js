@@ -73,25 +73,13 @@ export default function App() {
         <h2>Login Form</h2>
         <form onSubmit={onSignInSubmit}>
           <div id="sign-in-button"></div>
-          <input
-            type="number"
-            name="mobile"
-            placeholder="Mobile number"
-            required
-            onChange={handleChange}
-          />
+          <input type="number" name="mobile" placeholder="Mobile number" />
           <button type="submit">Send OTP</button>
         </form>
 
         <h6>Enter OTP</h6>
         <form onSubmit={onSubmitOTP}>
-          <input
-            type="number"
-            name="otp"
-            placeholder="OTP Number"
-            required
-            onChange={handleChange}
-          />
+          <input type="number" name="otp" placeholder="OTP Number" />
           <button type="submit">Log In</button>
         </form>
       </div>
