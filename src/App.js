@@ -13,20 +13,20 @@ export default function App() {
     // });
     return;
   }
-  function configureCaptcha() {
-    auth.languageCode = 'in';
-    window.recaptchaVerifier = new RecaptchaVerifier(
-      'sign-in-button',
-      {
-        size: 'invisible',
-        callback: (response) => {
-          // reCAPTCHA solved, allow signInWithPhoneNumber.
-          onSignInSubmit();
-        },
-      },
-      auth
-    );
-  }
+  // function configureCaptcha() {
+  //   auth.languageCode = 'in';
+  //   window.recaptchaVerifier = new RecaptchaVerifier(
+  //     'sign-in-button',
+  //     {
+  //       size: 'invisible',
+  //       callback: (response) => {
+  //         // reCAPTCHA solved, allow signInWithPhoneNumber.
+  //         onSignInSubmit();
+  //       },
+  //     },
+  //     auth
+  //   );
+  // }
 
   // function onSignInSubmit(e) {
   //   e.preventDefault();
