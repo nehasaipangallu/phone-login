@@ -11,7 +11,7 @@ const onSignInSubmit = (e) => {
   configureCaptcha();
   //const phoneNumber = "+91" + state.mobile;
   const auth = getAuth(app);
-  const phoneNumber = '+918971044793';
+  const phoneNumber = "+918971044793";
   console.log(phoneNumber);
   const appVerifier = window.recaptchaVerifier;
   signInWithPhoneNumber(auth, phoneNumber, appVerifier)
@@ -19,14 +19,14 @@ const onSignInSubmit = (e) => {
       // SMS sent. Prompt user to type the code from the message, then sign the
       // user in with confirmationResult.confirm(code).
       window.confirmationResult = confirmationResult;
-      console.log('OTP has been sent');
+      console.log("OTP has been sent");
       // ...
     })
     .catch((error) => {
       // Error; SMS not sent
       // ...
-      console.log('SMS not sent');
-    });
+      console.log("SMS not sent");
+    })
 };
 const onSubmitOTP = (e) => {
   // e.preventDefault();
@@ -47,19 +47,19 @@ const onSubmitOTP = (e) => {
 
 function App() {
   const configureCaptcha = () => {
-    //const auth = getAuth(app);
-    // getAuth(app).languageCode = "in";
-    // window.recaptchaVerifier = new RecaptchaVerifier(
-    //   "sign-in-button",
-    //   {
-    //     size: "invisible",
-    //     callback: (response) => {
-    //       // reCAPTCHA solved, allow signInWithPhoneNumber.
-    //       onSignInSubmit();
-    //     }
-    //   },
-    //   getAuth(app)
-    // );
+    const auth = getAuth(app);
+    getAuth(app).languageCode = "in";
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      "sign-in-button",
+      {
+        size: "invisible",
+        callback: (response) => {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+          onSignInSubmit();
+        }
+      },
+      getAuth(app)
+    );
   };
   return (
     <div>
