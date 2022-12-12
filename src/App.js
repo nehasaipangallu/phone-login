@@ -68,8 +68,8 @@ export default function App() {
   }
 
   return (
-    <div class="auth-container">
-      <div class="container auth-form">
+    <div>
+      <div>
         <h2>Login Form</h2>
         <form onSubmit={onSignInSubmit}>
           <div id="sign-in-button"></div>
