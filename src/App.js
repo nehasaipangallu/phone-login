@@ -46,6 +46,24 @@ const onSubmitOTP = (e) => {
 function App() {
   const configureCaptcha = () => {
     //const auth = getAuth(app);
+    // getAuth(app).languageCode = "in";
+    // window.recaptchaVerifier = new RecaptchaVerifier(
+    //   "sign-in-button",
+    //   {
+    //     size: "invisible",
+    //     callback: (response) => {
+    //       // reCAPTCHA solved, allow signInWithPhoneNumber.
+    //       onSignInSubmit();
+    //     }
+    //   },
+    //   getAuth(app)
+    // );
+  };
+  return (
+    <div>
+      <h2>Login Form</h2>
+      <form onSubmit={() => {
+    //const auth = getAuth(app);
     getAuth(app).languageCode = "in";
     window.recaptchaVerifier = new RecaptchaVerifier(
       "sign-in-button",
@@ -57,12 +75,7 @@ function App() {
         }
       },
       getAuth(app)
-    );
-  };
-  return (
-    <div>
-      <h2>Login Form</h2>
-      <form>
+    )}}>
         <div id="sign-in-button"></div>
         <input type="number" name="mobile" placeholder="Mobile number" />
         <button type="submit">Send OTP</button>
