@@ -25,23 +25,23 @@ const onSignInSubmit = (e) => {
   alert('hello');
   configureCaptcha();
   //const phoneNumber = "+91" + state.mobile;
-  var auth = getAuth(app);
-  var phoneNumber = '+918971044793';
-  //console.log(phoneNumber);
-  var appVerifier = window.recaptchaVerifier;
-  // signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-  //   .then((confirmationResult) => {
-  //     // SMS sent. Prompt user to type the code from the message, then sign the
-  //     // user in with confirmationResult.confirm(code).
-  //     window.confirmationResult = confirmationResult;
-  //     console.log("OTP has been sent");
-  //     // ...
-  //   })
-  //   .catch((error) => {
-  //     // Error; SMS not sent
-  //     // ...
-  //     console.log("SMS not sent");
-  //   })
+  //var auth = getAuth(app);
+  //var phoneNumber = '+918971044793';
+  console.log('561');
+  //var appVerifier = window.recaptchaVerifier;
+  signInWithPhoneNumber(getAuth(app), '+918971044793', window.recaptchaVerifier)
+    .then((confirmationResult) => {
+      // SMS sent. Prompt user to type the code from the message, then sign the
+      // user in with confirmationResult.confirm(code).
+      window.confirmationResult = confirmationResult;
+      console.log("OTP has been sent");
+      // ...
+    })
+    .catch((error) => {
+      // Error; SMS not sent
+      // ...
+      console.log("SMS not sent");
+    })
 };
 const onSubmitOTP = (e) => {
   // e.preventDefault();
