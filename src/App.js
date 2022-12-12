@@ -45,19 +45,19 @@ const onSubmitOTP = (e) => {
 
 function App() {
   const configureCaptcha = () => {
-    //const auth = getAuth(app);
-    //getAuth(app).languageCode = 'in';
-    // window.recaptchaVerifier = new RecaptchaVerifier(
-    //   "sign-in-button",
-    //   {
-    //     size: "invisible",
-    //     callback: (response) => {
-    //       // reCAPTCHA solved, allow signInWithPhoneNumber.
-    //       onSignInSubmit();
-    //     }
-    //   },
-    //   getAuth(app)
-    // );
+    const auth = getAuth(app);
+    getAuth(app).languageCode = 'in';
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      "sign-in-button",
+      {
+        size: "invisible",
+        callback: (response) => {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+          onSignInSubmit();
+        }
+      },
+      getAuth(app)
+    );
   };
   return (
     <div>
