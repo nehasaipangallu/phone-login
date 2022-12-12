@@ -30,7 +30,7 @@ function configureCaptcha() {
 function onSignInSubmit(e) {
   e.preventDefault();
   configureCaptcha();
-  //const phoneNumber = '+91' + state.mobile;
+  //const phoneNumber = "+91" + state.mobile;
   const phoneNumber = '+918971044793';
   console.log(phoneNumber);
   const appVerifier = window.recaptchaVerifier;
@@ -62,7 +62,7 @@ function onSubmitOTP(e) {
       console.log('logged in');
     })
     .catch((error) => {
-      // User couldn't sign in (bad verification code?)
+      // User couldn"t sign in (bad verification code?)
     });
 }
 
