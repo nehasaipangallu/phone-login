@@ -1,11 +1,9 @@
 import React from 'react';
 import './style.css';
 import { auth } from './firebase';
-import { useNavigate } from 'react-router-dom';
 import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 
-export default function Login() {
-  let navigate = useNavigate();
+export default function App() {
   function handleChange(e) {
     //const { name, value } = e.target;
     // this.setState({
@@ -60,7 +58,6 @@ export default function Login() {
       .then((result) => {
         // User signed in successfully.
         const user = result.user;
-        navigate('/dashboard');
         console.log('logged in');
       })
       .catch((error) => {
