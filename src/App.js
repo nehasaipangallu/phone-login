@@ -9,17 +9,17 @@ import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 const configureCaptcha = () => {
   //const auth = getAuth(app);
   getAuth(app).languageCode = "in";
-  window.recaptchaVerifier = new RecaptchaVerifier(
-    "sign-in-button",
-    {
-      size: "invisible",
-      callback: (response) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-        onSignInSubmit();
-      }
-    },
-    getAuth(app)
-  );
+  // window.recaptchaVerifier = new RecaptchaVerifier(
+  //   "sign-in-button",
+  //   {
+  //     size: "invisible",
+  //     callback: (response) => {
+  //       // reCAPTCHA solved, allow signInWithPhoneNumber.
+  //       onSignInSubmit();
+  //     }
+  //   },
+  //   getAuth(app)
+  // );
 };
 
 const onSignInSubmit = (e) => {
