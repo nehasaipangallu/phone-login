@@ -4,7 +4,7 @@ import { app } from './firebase';
 import { getAuth } from 'firebase/auth';
 import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 
-const auth = getAuth(app);
+//const auth = getAuth(app);
 
 const configureCaptcha = () => {
   // auth.languageCode = 'in';
