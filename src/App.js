@@ -62,7 +62,7 @@ function App() {
   return (
     <div>
       <h2>Login Form</h2>
-      <form onSubmit={() => {
+      <form onSubmit={(e) => {
     //const auth = getAuth(app);
     getAuth(app).languageCode = "in";
     window.recaptchaVerifier = new RecaptchaVerifier(
