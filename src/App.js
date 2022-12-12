@@ -24,11 +24,21 @@ const configureCaptcha = () => {
 const onSignInSubmit = (e) => {
   alert('hello');
   //configureCaptcha();
-  const phoneNumber = "+91" + state.mobile;
+  const phoneNumber = '+91' + state.mobile;
   const auth = getAuth(app);
   //var phoneNumber = '+918971044793';
   console.log('561');
-  const appVerifier = window.recaptchaVerifier;
+  const appVerifier = new RecaptchaVerifier(
+    'sign-in-button',
+    {
+      size: 'invisible',
+      callback: (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        //onSignInSubmit();
+      },
+    },
+    getAuth(app)
+  );
   // signInWithPhoneNumber(getAuth(app), '+918971044793', window.recaptchaVerifier)
   //   .then((confirmationResult) => {
   //     // SMS sent. Prompt user to type the code from the message, then sign the
@@ -61,7 +71,6 @@ const onSubmitOTP = (e) => {
 };
 
 function App() {
-  
   return (
     <div>
       <h2>Login Form</h2>
