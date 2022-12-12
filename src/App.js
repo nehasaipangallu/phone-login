@@ -5,6 +5,21 @@ import { getAuth } from 'firebase/auth';
 import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 
 //const auth = getAuth(app);
+const configureCaptcha = () => {
+  // const auth = getAuth(app);
+  // getAuth(app).languageCode = "in";
+  // window.recaptchaVerifier = new RecaptchaVerifier(
+  //   "sign-in-button",
+  //   {
+  //     size: "invisible",
+  //     callback: (response) => {
+  //       // reCAPTCHA solved, allow signInWithPhoneNumber.
+  //       onSignInSubmit();
+  //     }
+  //   },
+  //   getAuth(app)
+  // );
+};
 
 const onSignInSubmit = (e) => {
   alert('hello');
@@ -14,19 +29,19 @@ const onSignInSubmit = (e) => {
   const phoneNumber = "+918971044793";
   console.log(phoneNumber);
   const appVerifier = window.recaptchaVerifier;
-  signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-    .then((confirmationResult) => {
-      // SMS sent. Prompt user to type the code from the message, then sign the
-      // user in with confirmationResult.confirm(code).
-      window.confirmationResult = confirmationResult;
-      console.log("OTP has been sent");
-      // ...
-    })
-    .catch((error) => {
-      // Error; SMS not sent
-      // ...
-      console.log("SMS not sent");
-    })
+  // signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+  //   .then((confirmationResult) => {
+  //     // SMS sent. Prompt user to type the code from the message, then sign the
+  //     // user in with confirmationResult.confirm(code).
+  //     window.confirmationResult = confirmationResult;
+  //     console.log("OTP has been sent");
+  //     // ...
+  //   })
+  //   .catch((error) => {
+  //     // Error; SMS not sent
+  //     // ...
+  //     console.log("SMS not sent");
+  //   })
 };
 const onSubmitOTP = (e) => {
   // e.preventDefault();
@@ -46,21 +61,7 @@ const onSubmitOTP = (e) => {
 };
 
 function App() {
-  const configureCaptcha = () => {
-    const auth = getAuth(app);
-    getAuth(app).languageCode = "in";
-    window.recaptchaVerifier = new RecaptchaVerifier(
-      "sign-in-button",
-      {
-        size: "invisible",
-        callback: (response) => {
-          // reCAPTCHA solved, allow signInWithPhoneNumber.
-          onSignInSubmit();
-        }
-      },
-      getAuth(app)
-    );
-  };
+  
   return (
     <div>
       <h2>Login Form</h2>
