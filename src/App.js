@@ -63,10 +63,10 @@ function App() {
   return (
     <div>
       <h2>Login Form</h2>
-      <form onSubmit={onSignInSubmit}>
+      <form >
         <div id="sign-in-button"></div>
         <input type="number" name="mobile" placeholder="Mobile number" />
-        <button type="submit">Send OTP</button>
+        <button type="submit" onClick={onSignInSubmit}>Send OTP</button>
       </form>
 
       <h6>Enter OTP</h6>
