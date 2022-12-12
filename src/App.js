@@ -5,7 +5,7 @@ import { getAuth } from 'firebase/auth';
 import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 
 export default function App() {
-  const auth = getAuth(app);
+  //const auth = getAuth(app);
   // function handleChange(e) {
   //   //const { name, value } = e.target;
   //   // this.setState({
