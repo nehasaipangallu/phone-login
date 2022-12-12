@@ -7,25 +7,25 @@ import { signInWithPhoneNumber, RecaptchaVerifier } from 'firebase/auth';
 //const auth = getAuth(app);
 
 const onSignInSubmit = (e) => {
-  alert("hello");
-  // configureCaptcha();
-  // //const phoneNumber = "+91" + state.mobile;
-  // const phoneNumber = '+918971044793';
-  // console.log(phoneNumber);
-  // const appVerifier = window.recaptchaVerifier;
-  // signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-  //   .then((confirmationResult) => {
-  //     // SMS sent. Prompt user to type the code from the message, then sign the
-  //     // user in with confirmationResult.confirm(code).
-  //     window.confirmationResult = confirmationResult;
-  //     console.log('OTP has been sent');
-  //     // ...
-  //   })
-  //   .catch((error) => {
-  //     // Error; SMS not sent
-  //     // ...
-  //     console.log('SMS not sent');
-  //   });
+  alert('hello');
+  configureCaptcha();
+  //const phoneNumber = "+91" + state.mobile;
+  const phoneNumber = '+918971044793';
+  console.log(phoneNumber);
+  const appVerifier = window.recaptchaVerifier;
+  signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+    .then((confirmationResult) => {
+      // SMS sent. Prompt user to type the code from the message, then sign the
+      // user in with confirmationResult.confirm(code).
+      window.confirmationResult = confirmationResult;
+      console.log('OTP has been sent');
+      // ...
+    })
+    .catch((error) => {
+      // Error; SMS not sent
+      // ...
+      console.log('SMS not sent');
+    });
 };
 const onSubmitOTP = (e) => {
   // e.preventDefault();
@@ -63,10 +63,12 @@ function App() {
   return (
     <div>
       <h2>Login Form</h2>
-      <form >
+      <form>
         <div id="sign-in-button"></div>
         <input type="number" name="mobile" placeholder="Mobile number" />
-        <button type="submit" onClick={onSignInSubmit}>Send OTP</button>
+        <button type="submit" onClick={onSignInSubmit}>
+          Send OTP
+        </button>
       </form>
 
       <h6>Enter OTP</h6>
